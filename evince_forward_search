@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2010 Jose Aliste <jose.aliste@gmail.com>
@@ -44,4 +44,6 @@ try:
 except dbus.DBusException:
     print_exc()     
 
-window.SyncView(tex_file, (line_number,1), dbus_interface="org.gnome.evince.Window")
+import time
+timestamp = time.time()
+window.SyncView(tex_file, (line_number,1), timestamp, dbus_interface="org.gnome.evince.Window")
